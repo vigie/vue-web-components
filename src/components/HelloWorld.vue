@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+
+    <vmw-datagrid ref="vmwDatagrid" v-bind:greeting="greeting" v-on:select="log($event.detail)"></vmw-datagrid>
+    <vmw-datepicker></vmw-datepicker>
+
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -34,7 +38,33 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    greeting: String,
+    users: Array
+  },
+  mounted: function() {
+    // Note the complex value for the users property must be passed
+    // to the property itself and not via an attribute in the template,
+    // where it would be interpreted as a string.
+    this.$refs.vmwDatagrid.users = [
+      {
+          id: 1,
+          name: 'Matt',
+          creation: Date.now(),
+          color: 'Orange'
+      },
+      {
+          id: 2,
+          name: 'Etienne',
+          creation: Date.now(),
+          color: 'Green'
+      }    
+    ];
+  },
+  methods: {
+    log: function(event) {
+      console.log(event);
+    }
   }
 }
 </script>

@@ -5,11 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>hello-world</title>
+    <link rel="stylesheet" href="@clr/ui/clr-ui.min.css" />
+    <link rel="stylesheet" href="@clr/icons/clr-icons.min.css">
+    <title>vue-web-components</title>
+
   </head>
   <body>
+    <!--CLARITY ICONS API & ALL ICON SETS-->
+    <script src="@clr/icons/clr-icons.min.js"></script> 
+
+    <!-- core-js for legacy browsers -->
+    <script src="core-js/client/core.js"></script>
+
+    <!-- Zone.js -->
+    <!-- 
+        Consider excluding zone.js when creating
+        custom Elements by using the noop zone.
+    -->
+    <script src="zone.js/dist/zone.js"></script>
+
+
+    <!-- Polyfills for Browsers supporting 
+            Custom Elements. Needed b/c we downlevel
+            to ES5. See: @webcomponents/custom-elements
+    -->
+    <script src="@webcomponents/custom-elements/src/native-shim.js"></script>
+
+    <!-- Polyfills for Browsers not supporting
+            Custom Elements. See: @webcomponents/custom-elements
+    -->
+    <script src="@webcomponents/custom-elements/custom-elements.min.js"></script>
+
+
+    <!-- Rx -->
+    <script src="rxjs/bundles/rxjs.umd.js"></script>
+
+    <!-- Angular Packages -->
+    <script src="@angular/core/bundles/core.umd.js"></script>
+    <script src="@angular/common/bundles/common.umd.js"></script>
+    <script src="@angular/platform-browser/bundles/platform-browser.umd.js"></script>
+    <script src="@angular/elements/bundles/elements.umd.js"></script>
+
+
     <noscript>
-      <strong>We're sorry but hello-world doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but vue-web-components doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
